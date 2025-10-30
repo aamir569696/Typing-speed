@@ -19,7 +19,7 @@ let spans = paragraph.querySelectorAll("span");
 //this part for timer
 let leftTime = 60;
 let timerruning = false;
-Input.addEventListener("keypress", () => {
+Input.addEventListener("input", () => {
   if (!timerruning) {
     timerruning = true;
     let countdown = setInterval(() => {
