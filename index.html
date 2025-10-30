@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>TYPING-SPEED</title>
+    <link rel="shortcut icon" href="favicon-32x32.png" type="image/x-icon" />
+
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <main>
+      <div class="typing-page">
+        <h1>TEST YOUR TYPING SPEED</h1>
+        <div class="timer">
+          Time: <span>60s</span><br />
+          <small style="font-size: 16px"
+            >Starts counting when you start typing.</small
+          >
+        </div>
+        <input
+          id="input"
+          type="text"
+          class="hidden-input"
+          placeholder="Start typing..."
+          autocomplete="off"
+          autocorrect="off"
+          autocapitalize="off"
+        />
+        <div class="para">
+          <p>
+            Success does not come overnight it takes effort patience and
+            consistency to reach your goals Many people give up too early
+            because they expect instant results However true growth happens
+            slowly one step at a time When you face challenges remember that
+            every mistake teaches you something valuable Keep learning stay
+            positive and never stop trying Even small progress is better than no
+            progress at all Success belongs to those who stay focused and never
+            lose hope no matter how hard the journey becomes
+          </p>
+        </div>
+      </div>
+      <div class="result-page">
+        <h1>TEST YOUR TYPING SPEED</h1>
+        <div class="parent">
+          <div class="word">
+            <small>WORD PER MINUTES</small>
+            <h2></h2>
+          </div>
+          <div class="character">
+            <small>CHARACTER</small>
+            <h2></h2>
+          </div>
+          <div class="error">
+            <small>ERROR</small>
+            <h2></h2>
+          </div>
+        </div>
+        <button class="reset-game">Try Again</button>
+      </div>
+    </main>
+    <script src="script.js"></script>
+  </body>
+</html>
