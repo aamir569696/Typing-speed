@@ -39,6 +39,7 @@ Input.addEventListener("input", () => {
 let index = 0;
 Input.addEventListener("input", () => {
   let typedchar = Input.value.slice(-1);
+  if (typedchar === "") return;
   if (typedchar) {
     let currentspan = spans[index];
     let currentletter = currentspan.innerText;
@@ -52,9 +53,52 @@ Input.addEventListener("input", () => {
       errorcount++;
     }
     index++;
-    // Input.value="";
+    Input.value = "";
   }
 });
+
+//This for pc backspace
+
+Input.addEventListener("keydown", (e) => {
+  if (e.key === "Backspace" && index > 0) {
+    index--;
+    let currentspan = spans[index];
+    let currentColor = currentspan.style.color;
+    if (currentColor === "rgb(255, 107, 107)" || currentColor === "#FF6B6B") {
+      errorcount--;
+    } else if (
+      currentColor === "rgb(0, 255, 127)" ||
+      currentColor === "#00FF7F"
+    ) {
+      corectcount--;
+    }
+    currentspan.style.color = "";
+    e.preventDefault();
+  }
+});
+//This for mobile keybord back
+
+Input.addEventListener("input", (e) => {
+  if (
+    Input.value.length === 0 &&
+    e.inputType === "deleteContentBackward" &&
+    index > 0
+  ) {
+    index--;
+    let currentspan = spans[index];
+    let currentColor = currentspan.style.color;
+    if (currentColor === "rgb(255, 107, 107)" || currentColor === "#FF6B6B") {
+      errorcount--;
+    } else if (
+      currentColor === "rgb(0, 255, 127)" ||
+      currentColor === "#00FF7F"
+    ) {
+      corectcount--;
+    }
+    currentspan.style.color = "";
+  }
+});
+
 function showresult() {
   let timetaken = 60 - leftTime;
 
